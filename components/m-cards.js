@@ -188,7 +188,7 @@ export class MCardPanel extends Generator{
 
         if(colorText !==null){
 
-            colorTestArray=color.split(' ');
+            colorTextArray=color.split(' ');
             colorTextArray.forEach((f)=>{
                 span.classList.add(f);
             })
