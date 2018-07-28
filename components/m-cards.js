@@ -161,3 +161,50 @@ export class MCardReveal extends Generator{
     }
 }
 customElements.define('m-card-reveal',MCardReveal);
+
+export class MCardPanel extends Generator{
+
+    create(){
+        const div=document.createElement('div');
+        const span=document.createElement('span');
+
+        const color=this.getProps('color');
+        const colorText=this.getProps('color-text');
+        let colorArray=new Array();
+        let colorTextArray=new Array();
+
+
+        div.classList.add('card-panel');
+        
+        if(color !==null){
+
+            colorArray=color.split(' ');
+            colorArray.forEach((f)=>{
+                div.classList.add(f);
+            })
+        }else{
+            div.classList.add('teal');
+        }
+
+        if(colorText !==null){
+
+            colorTestArray=color.split(' ');
+            colorTextArray.forEach((f)=>{
+                span.classList.add(f);
+            })
+
+        }else{
+            span.classList.add('white-text');
+        }
+
+        span.innerHTML=this.innerHTML;
+        this.innerHTML=null;
+
+        div.appendChild(span);
+        this.appendChild(div);
+
+
+
+    }
+}
+customElements.define('m-card-panel',MCardPanel);
